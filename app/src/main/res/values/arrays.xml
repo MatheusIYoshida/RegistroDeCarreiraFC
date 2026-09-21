@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nomes_temporadas">
+        <item>2025/2026</item><item>2026/2027</item><item>2027/2028</item><item>2028/2029</item><item>2029/2030</item>
+        <item>2030/2031</item><item>2031/2032</item><item>2032/2033</item><item>2033/2034</item><item>2034/2035</item>
+    </string-array>
+    <string-array name="clubes">
+        <item>Santos</item><item>Palmeiras</item><item>Real Madrid</item><item>Manchester City</item><item>Barcelona</item>
+        <item>Bayern de Munique</item><item>Paris Saint-Germain</item><item>Juventus</item><item>Liverpool</item><item>Flamengo</item>
+    </string-array>
+    <string-array name="partidas">
+        <item>32</item><item>38</item><item>44</item><item>48</item><item>51</item><item>49</item><item>53</item><item>46</item><item>50</item><item>42</item>
+    </string-array>
+    <string-array name="gols">
+        <item>12</item><item>18</item><item>25</item><item>31</item><item>29</item><item>34</item><item>37</item><item>28</item><item>32</item><item>22</item>
+    </string-array>
+    <string-array name="assistencias">
+        <item>7</item><item>10</item><item>14</item><item>16</item><item>13</item><item>18</item><item>20</item><item>15</item><item>17</item><item>11</item>
+    </string-array>
+</resources>

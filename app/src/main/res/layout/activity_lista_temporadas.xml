@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listViewTemporadas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:divider="@android:color/darker_gray"
+    android:dividerHeight="1dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp" />
