@@ -1,5 +1,6 @@
 package com.example.registrodecarreirafc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,6 +19,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_TEMPORADA = "temporada";
+    public static final String EXTRA_CLUBE = "clube";
+    public static final String EXTRA_PARTIDAS = "partidas";
+    public static final String EXTRA_GOLS = "gols";
+    public static final String EXTRA_ASSISTENCIAS = "assistencias";
+    public static final String EXTRA_STATUS = "status";
+    public static final String EXTRA_TITULO = "titulo";
+    public static final String EXTRA_POSICAO = "posicao";
 
     private EditText editTextTemporada;
     private EditText editTextClube;
@@ -144,12 +154,17 @@ public class MainActivity extends AppCompatActivity {
         String conquistouTitulo = checkBoxTitulo.isChecked() ? "Sim" : "Não";
         String posicao = spinnerPosicao.getSelectedItem().toString();
 
-        String mensagem = "Temporada salva: " + temporada
-                + " | Clube: " + clube
-                + " | Posição: " + posicao
-                + " | Status: " + status
-                + " | Título: " + conquistouTitulo;
+        Intent dadosRetorno = new Intent();
+        dadosRetorno.putExtra(EXTRA_TEMPORADA, temporada);
+        dadosRetorno.putExtra(EXTRA_CLUBE, clube);
+        dadosRetorno.putExtra(EXTRA_PARTIDAS, Integer.parseInt(partidas));
+        dadosRetorno.putExtra(EXTRA_GOLS, Integer.parseInt(gols));
+        dadosRetorno.putExtra(EXTRA_ASSISTENCIAS, Integer.parseInt(assistencias));
+        dadosRetorno.putExtra(EXTRA_STATUS, status);
+        dadosRetorno.putExtra(EXTRA_TITULO, conquistouTitulo);
+        dadosRetorno.putExtra(EXTRA_POSICAO, posicao);
 
-        Toast.makeText(this, mensagem, Toast.LENGTH_LONG).show();
+        setResult(RESULT_OK, dadosRetorno);
+        finish();
     }
 }

@@ -1,6 +1,9 @@
 package com.example.registrodecarreirafc;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,7 +17,9 @@ import java.util.ArrayList;
 
 public class ListaTemporadasActivity extends AppCompatActivity {
 
+    private static final int REQUEST_CADASTRO_TEMPORADA = 1;
     private final ArrayList<Temporada> temporadas = new ArrayList<>();
+    private TemporadaAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +27,39 @@ public class ListaTemporadasActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_lista_temporadas);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.listViewTemporadas), (v, insets) -> {
+        View layoutListaTemporadas = findViewById(R.id.layoutListaTemporadas);
+        int paddingEsquerdo = layoutListaTemporadas.getPaddingLeft();
+        int paddingSuperior = layoutListaTemporadas.getPaddingTop();
+        int paddingDireito = layoutListaTemporadas.getPaddingRight();
+        int paddingInferior = layoutListaTemporadas.getPaddingBottom();
+
+        ViewCompat.setOnApplyWindowInsetsListener(layoutListaTemporadas, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            v.setPadding(
+                    paddingEsquerdo + systemBars.left,
+                    paddingSuperior + systemBars.top,
+                    paddingDireito + systemBars.right,
+                    paddingInferior + systemBars.bottom
+            );
             return insets;
         });
 
-        carregarTemporadas();
-
         ListView listViewTemporadas = findViewById(R.id.listViewTemporadas);
-        TemporadaAdapter adapter = new TemporadaAdapter(this, temporadas);
+        Button buttonAdicionar = findViewById(R.id.buttonAdicionar);
+        Button buttonSobre = findViewById(R.id.buttonSobre);
+
+        adapter = new TemporadaAdapter(this, temporadas);
         listViewTemporadas.setAdapter(adapter);
+
+        buttonAdicionar.setOnClickListener(view -> {
+            Intent intentCadastro = new Intent(this, MainActivity.class);
+            startActivityForResult(intentCadastro, REQUEST_CADASTRO_TEMPORADA);
+        });
+
+        buttonSobre.setOnClickListener(view -> {
+            Intent intentSobre = new Intent(this, SobreActivity.class);
+            startActivity(intentSobre);
+        });
 
         listViewTemporadas.setOnItemClickListener((parent, view, position, id) -> {
             Temporada temporadaSelecionada = temporadas.get(position);
@@ -42,21 +69,21 @@ public class ListaTemporadasActivity extends AppCompatActivity {
         });
     }
 
-    private void carregarTemporadas() {
-        String[] nomesTemporadas = getResources().getStringArray(R.array.nomes_temporadas);
-        String[] clubes = getResources().getStringArray(R.array.clubes);
-        String[] partidas = getResources().getStringArray(R.array.partidas);
-        String[] gols = getResources().getStringArray(R.array.gols);
-        String[] assistencias = getResources().getStringArray(R.array.assistencias);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-        for (int i = 0; i < nomesTemporadas.length; i++) {
-            temporadas.add(new Temporada(
-                    nomesTemporadas[i],
-                    clubes[i],
-                    Integer.parseInt(partidas[i]),
-                    Integer.parseInt(gols[i]),
-                    Integer.parseInt(assistencias[i])
-            ));
+        if (requestCode == REQUEST_CADASTRO_TEMPORADA && resultCode == RESULT_OK && data != null) {
+            Temporada temporada = new Temporada(
+                    data.getStringExtra(MainActivity.EXTRA_TEMPORADA),
+                    data.getStringExtra(MainActivity.EXTRA_CLUBE),
+                    data.getIntExtra(MainActivity.EXTRA_PARTIDAS, 0),
+                    data.getIntExtra(MainActivity.EXTRA_GOLS, 0),
+                    data.getIntExtra(MainActivity.EXTRA_ASSISTENCIAS, 0)
+            );
+
+            temporadas.add(temporada);
+            adapter.notifyDataSetChanged();
         }
     }
 }
