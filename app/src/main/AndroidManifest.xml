@@ -14,16 +14,18 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="Cadastro de Temporada"
+            android:label="@string/title_season_registration"
+            android:parentActivityName=".ListaTemporadasActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".SobreActivity"
             android:exported="false"
-            android:label="Sobre" />
+            android:label="@string/title_about"
+            android:parentActivityName=".ListaTemporadasActivity" />
         <activity
             android:name=".ListaTemporadasActivity"
             android:exported="true"
-            android:label="Temporadas">
+            android:label="@string/title_seasons">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

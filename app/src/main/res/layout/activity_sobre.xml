@@ -15,7 +15,7 @@
         <ImageView
             android:layout_width="280dp"
             android:layout_height="105dp"
-            android:contentDescription="Logo da UTFPR"
+            android:contentDescription="@string/utfpr_logo_description"
             android:scaleType="fitCenter"
             android:src="@drawable/logo_utfpr" />
 
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="UTFPR"
+            android:text="@string/utfpr_name"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Registro de Carreira de Jogador no EA Sports FC"
+            android:text="@string/about_app_title"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -39,28 +39,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Aplicativo para registrar e consultar temporadas, clubes e estatísticas de uma carreira de jogador no EA Sports FC."
+            android:text="@string/about_app_description"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Aluno: Matheus Imazu Yoshida"
+            android:text="@string/about_student"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Curso: Engenharia de Computação"
+            android:text="@string/about_course"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="E-mail: matheusyoshida@alunos.utfpr.edu.br"
+            android:text="@string/about_email"
             android:textSize="16sp" />
     </LinearLayout>
 

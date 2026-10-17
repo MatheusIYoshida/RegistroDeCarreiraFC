@@ -1,3 +1,62 @@
 <resources>
-    <string name="app_name">RegistroDeCarreiraFC</string>
+    <string name="app_name">EA FC Career Tracker</string>
+    <string name="title_seasons">Seasons</string>
+    <string name="title_season_registration">Season Registration</string>
+    <string name="title_about">About</string>
+
+    <string name="label_season">Season</string>
+    <string name="hint_season">E.g.: 2026/2027</string>
+    <string name="label_club">Club</string>
+    <string name="hint_club">E.g.: Real Madrid</string>
+    <string name="label_matches">Matches</string>
+    <string name="hint_matches">E.g.: 38</string>
+    <string name="label_goals">Goals</string>
+    <string name="hint_goals">E.g.: 25</string>
+    <string name="label_assists">Assists</string>
+    <string name="hint_assists">E.g.: 12</string>
+    <string name="label_season_status">Season status</string>
+    <string name="status_in_progress">In progress</string>
+    <string name="status_finished">Finished</string>
+    <string name="label_won_title">Won a title this season</string>
+    <string name="label_player_position">Player position</string>
+
+    <string name="menu_add">Add</string>
+    <string name="menu_about">About</string>
+    <string name="menu_sort_by">Sort by</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_clear">Clear</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
+
+    <string name="toast_fields_cleared">Fields cleared successfully.</string>
+    <string name="error_season_required">Enter the season.</string>
+    <string name="error_club_required">Enter the club.</string>
+    <string name="error_matches_required">Enter the number of matches.</string>
+    <string name="error_goals_required">Enter the number of goals.</string>
+    <string name="error_assists_required">Enter the number of assists.</string>
+    <string name="error_status_required">Select the season status.</string>
+    <string name="season_item_title">%1$s - %2$s</string>
+    <string name="season_statistics">Matches: %1$d | Goals: %2$d | Assists: %3$d</string>
+
+    <string name="sort_dialog_title">Sort by</string>
+    <string name="utfpr_logo_description">UTFPR logo</string>
+    <string name="utfpr_name">UTFPR</string>
+    <string name="about_app_title">EA Sports FC Player Career Tracker</string>
+    <string name="about_app_description">App for recording and viewing seasons, clubs, and statistics from an EA Sports FC player career.</string>
+    <string name="about_student">Student: Matheus Imazu Yoshida</string>
+    <string name="about_course">Course: Computer Engineering</string>
+    <string name="about_email">Email: matheusyoshida@alunos.utfpr.edu.br</string>
+
+    <string-array name="player_positions">
+        <item>Goalkeeper</item>
+        <item>Defender</item>
+        <item>Midfielder</item>
+        <item>Forward</item>
+    </string-array>
+
+    <string-array name="sort_options">
+        <item>Season</item>
+        <item>Club</item>
+        <item>Goals</item>
+    </string-array>
 </resources>

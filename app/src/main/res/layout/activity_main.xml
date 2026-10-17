@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastro de Temporada"
+            android:text="@string/title_season_registration"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -24,72 +24,72 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Temporada" />
+            android:text="@string/label_season" />
 
         <EditText
             android:id="@+id/editTextTemporada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ex: 2026/2027"
+            android:hint="@string/hint_season"
             android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Clube" />
+            android:text="@string/label_club" />
 
         <EditText
             android:id="@+id/editTextClube"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ex: Real Madrid"
+            android:hint="@string/hint_club"
             android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Partidas" />
+            android:text="@string/label_matches" />
 
         <EditText
             android:id="@+id/editTextPartidas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ex: 38"
+            android:hint="@string/hint_matches"
             android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Gols" />
+            android:text="@string/label_goals" />
 
         <EditText
             android:id="@+id/editTextGols"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ex: 25"
+            android:hint="@string/hint_goals"
             android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Assistências" />
+            android:text="@string/label_assists" />
 
         <EditText
             android:id="@+id/editTextAssistencias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ex: 12"
+            android:hint="@string/hint_assists"
             android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Status da temporada" />
+            android:text="@string/label_season_status" />
 
         <RadioGroup
             android:id="@+id/radioGroupStatus"
@@ -100,13 +100,13 @@
                 android:id="@+id/radioButtonAndamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Em andamento" />
+                android:text="@string/status_in_progress" />
 
             <RadioButton
                 android:id="@+id/radioButtonFinalizada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Finalizada" />
+                android:text="@string/status_finished" />
 
         </RadioGroup>
 
@@ -114,32 +114,18 @@
             android:id="@+id/checkBoxTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Conquistou título nesta temporada" />
+            android:text="@string/label_won_title" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Posição do jogador" />
+            android:text="@string/label_player_position" />
 
         <Spinner
             android:id="@+id/spinnerPosicao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/buttonLimpar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Limpar" />
-
-        <Button
-            android:id="@+id/buttonSalvar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Salvar" />
 
     </LinearLayout>
 

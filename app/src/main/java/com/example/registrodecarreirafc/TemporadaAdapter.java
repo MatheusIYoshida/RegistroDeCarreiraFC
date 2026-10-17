@@ -36,12 +36,17 @@ public class TemporadaAdapter extends ArrayAdapter<Temporada> {
         TextView textViewEstatisticas = itemView.findViewById(R.id.textViewEstatisticasTemporada);
 
         if (temporada != null) {
-            textViewTitulo.setText(temporada.getNomeTemporada() + " - " + temporada.getClube());
-            textViewEstatisticas.setText(
-                    "Partidas: " + temporada.getPartidas()
-                            + " | Gols: " + temporada.getGols()
-                            + " | Assistências: " + temporada.getAssistencias()
-            );
+            textViewTitulo.setText(getContext().getString(
+                    R.string.season_item_title,
+                    temporada.getNomeTemporada(),
+                    temporada.getClube()
+            ));
+            textViewEstatisticas.setText(getContext().getString(
+                    R.string.season_statistics,
+                    temporada.getPartidas(),
+                    temporada.getGols(),
+                    temporada.getAssistencias()
+            ));
         }
 
         return itemView;
